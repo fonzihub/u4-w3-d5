@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
+
 @Entity
 @Table(name = "utenti")
 public class Utente {
@@ -12,12 +13,14 @@ public class Utente {
     @Column(nullable = false)
     private String Cognome;
     private LocalDate dataNascita;
-    @Column(name= "n_tessera",nullable = false, unique = true)
-@Id
+    @Column(name = "n_tessera", nullable = false, unique = true)
+    @Id
     @GeneratedValue
     private UUID numeroTessera;
 
-public Utente(){}
+    public Utente() {
+    }
+
     public Utente(String nome, String cognome, LocalDate dataNascita, UUID numeroTessera) {
         this.nome = nome;
         Cognome = cognome;
@@ -53,8 +56,6 @@ public Utente(){}
     public UUID getNumeroTessera() {
         return numeroTessera;
     }
-
-
 
 
     @Override
