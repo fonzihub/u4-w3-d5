@@ -11,20 +11,23 @@ import java.util.UUID;
 public abstract class Catalogo {
     @Id
     @GeneratedValue
-protected UUID id;
+    protected UUID id;
     @Column(nullable = false)
 
-protected String titolo;
-@Column(name = "anno_pubblicazione")
-protected int annoPublicazione;
-@Column(name = "n_pagine")
-protected int numeroPagine;
+    protected String titolo;
+    @Column(name = "anno_pubblicazione")
+    protected int annoPublicazione;
+    @Column(name = "n_pagine")
+    protected int numeroPagine;
+
+
+
 
     public Catalogo() {
 
     }
 
-    public Catalogo( String titolo, int annoPublicazione, int numeroPagine) {
+    public Catalogo(String titolo, int annoPublicazione, int numeroPagine) {
 
         this.titolo = titolo;
         this.annoPublicazione = annoPublicazione;
@@ -34,7 +37,6 @@ protected int numeroPagine;
     public UUID getId() {
         return id;
     }
-
 
 
     public String getTitolo() {

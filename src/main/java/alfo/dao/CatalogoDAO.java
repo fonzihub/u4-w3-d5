@@ -39,7 +39,7 @@ public class CatalogoDAO {
         Query query = entityManager.createQuery("DELETE FROM CATALOGO c WHERE c.id = :id");
         query.setParameter("id", id);
 
-     
+
 
     }
 
