@@ -1,5 +1,6 @@
 package alfo;
 
+import alfo.dao.CatalogoDAO;
 import alfo.dao.LibroDAO;
 import alfo.dao.RivistaDAO;
 import alfo.entities.Libro;
@@ -14,8 +15,8 @@ public class Application {
 
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
-        LibroDAO cd = new LibroDAO(em);
-        RivistaDAO rd = new RivistaDAO(em);
+        CatalogoDAO cd = new CatalogoDAO(em);
+
 
 
         Libro libro1 = new Libro("Il Signore degli Anelli", 1954, 1178, "J.R.R. Tolkien", "Fantasy");
@@ -28,8 +29,8 @@ public class Application {
         Rivista rivista3 = new Rivista("Time", 2025, 90, Periodicita.SETTIMANALE);
 
 
-//        cd.saveL(libro3);
-//       rd.saveR(rivista1);
+//        cd.save(libro3);
+//        cd.save(rivista1);
 
 
         em.close();

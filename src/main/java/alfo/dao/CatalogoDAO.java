@@ -1,5 +1,6 @@
 package alfo.dao;
 
+import alfo.entities.Catalogo;
 import alfo.entities.Libro;
 import alfo.entities.Rivista;
 import jakarta.persistence.EntityManager;
@@ -17,31 +18,23 @@ public class CatalogoDAO {
     }
 
 
-    public void saveR(Rivista newRivista){
+    public void save(Catalogo newCatalogo){
         EntityTransaction transaction = entityManager.getTransaction();
 
         transaction.begin();
-        entityManager.persist(newRivista);
+        entityManager.persist(newCatalogo);
         transaction.commit();
-        System.out.println("la rivista: " + newRivista.getTitolo() + " è stata salvata");
+        System.out.println("la rivista: " + newCatalogo.getTitolo() + " è stata salvata");
 
     }
 
-    public void saveL(Libro newLibro){
-        EntityTransaction transaction = entityManager.getTransaction();
 
-        transaction.begin();
-        entityManager.persist(newLibro);
-        transaction.commit();
-        System.out.println("il libro: " + newLibro.getTitolo() + " è stato salvato");
-
-    }
 
 
     public void findElementByIdAndDelete(UUID id){
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        
+
     }
 
 
