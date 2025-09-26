@@ -1,10 +1,7 @@
 package alfo.entities;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +9,8 @@ import java.util.UUID;
 
 
 @Entity
-@Table(name = "libri")
+@DiscriminatorValue("Libro")
+@Table (name = "libri")
 public class Libro extends Catalogo {
 
     @Column(nullable = false)
