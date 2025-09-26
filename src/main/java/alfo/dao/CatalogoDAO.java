@@ -5,6 +5,7 @@ import alfo.entities.Libro;
 import alfo.entities.Rivista;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Query;
 
 import java.util.UUID;
 
@@ -24,7 +25,7 @@ public class CatalogoDAO {
         transaction.begin();
         entityManager.persist(newCatalogo);
         transaction.commit();
-        System.out.println("la rivista: " + newCatalogo.getTitolo() + " è stata salvata");
+        System.out.println(newCatalogo.getTitolo() + " è stato salvato");
 
     }
 
@@ -34,6 +35,11 @@ public class CatalogoDAO {
     public void findElementByIdAndDelete(UUID id){
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
+
+        Query query = entityManager.createQuery("DELETE FROM CATALOGO c WHERE c.id = :id");
+        query.setParameter("id", id);
+
+     
 
     }
 
